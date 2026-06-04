@@ -3,19 +3,19 @@ import ModeSelector from './components/ModeSelector'
 import ProjectSetup from './components/ProjectSetup'
 import FileUploader from './components/FileUploader'
 import ExcelMapper from './components/ExcelMapper'
+import DelayDetector from './components/DelayDetector'
 import DelayEventForm from './components/DelayEventForm'
 import ManualEntry from './components/ManualEntry'
 import ResultsDashboard from './components/ResultsDashboard'
 import ReportPreview from './components/ReportPreview'
 
-const STEPS = ['mode', 'project', 'upload', 'delays', 'results', 'report']
+const STEPS = ['mode', 'project', 'upload', 'detect', 'delays', 'results', 'report']
 
 export default function App() {
   const [step, setStep] = useState('mode')
-  const [mode, setMode] = useState(null) // 'p6' | 'excel' | 'manual'
+  const [mode, setMode] = useState(null)
   const [projectData, setProjectData] = useState({})
   const [uploadedData, setUploadedData] = useState(null)
-  const [columnMapping, setColumnMapping] = useState(null)
   const [delayEvents, setDelayEvents] = useState([])
   const [calculation, setCalculation] = useState(null)
   const [narrative, setNarrative] = useState(null)
@@ -89,9 +89,18 @@ export default function App() {
     }
   }
 
+  // After file upload: P6 and Excel go to detect screen, manual goes straight to delays
+  function handleUploaded(data) {
+    setUploadedData(data)
+    if (data.activities?.length > 0) {
+      go('detect')
+    } else {
+      go('delays')
+    }
+  }
+
   return (
     <div className="min-h-screen bg-stone-50 font-sans">
-      {/* Header */}
       <header className="bg-white border-b border-stone-200 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-teal-700 rounded flex items-center justify-center">
@@ -104,9 +113,9 @@ export default function App() {
             <p className="text-xs text-stone-500">FIDIC-compliant claims preparation tool</p>
           </div>
         </div>
-        <div className="flex items-center gap-2 text-xs text-stone-400">
-          {['mode','project','upload/manual','delays','results','report'].map((s, i) => (
-            <span key={s} className={`flex items-center gap-1 ${step === STEPS[i] ? 'text-teal-700 font-medium' : ''}`}>
+        <div className="hidden md:flex items-center gap-1 text-xs text-stone-400">
+          {['mode','project','upload','detect','delays','results','report'].map((s, i) => (
+            <span key={s} className={`flex items-center gap-1 ${step === s ? 'text-teal-700 font-medium' : ''}`}>
               {i > 0 && <span className="text-stone-300">›</span>}
               {s}
             </span>
@@ -114,7 +123,6 @@ export default function App() {
         </div>
       </header>
 
-      {/* Error Banner */}
       {error && (
         <div className="bg-red-50 border-b border-red-200 px-6 py-3 text-sm text-red-700 flex justify-between">
           <span>⚠ {error}</span>
@@ -122,7 +130,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Loading overlay */}
       {loading && (
         <div className="fixed inset-0 bg-white/80 z-50 flex items-center justify-center">
           <div className="text-center">
@@ -132,7 +139,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Main content */}
       <main className="max-w-4xl mx-auto px-4 py-8">
         {step === 'mode' && (
           <ModeSelector onSelect={(m) => { setMode(m); go('project') }} />
@@ -146,20 +152,23 @@ export default function App() {
             api={API}
           />
         )}
-        {step === 'upload' && mode === 'excel' && (
+        {step === 'upload' && (
           <FileUploader
             mode={mode}
             api={API}
-            onUploaded={(data) => { setUploadedData(data); go('delays') }}
+            onUploaded={handleUploaded}
             onBack={() => go('project')}
           />
         )}
-        {step === 'upload' && mode === 'p6' && (
-          <FileUploader
-            mode={mode}
-            api={API}
-            onUploaded={(data) => { setUploadedData(data); setDelayEvents(data.activities || []); go('delays') }}
-            onBack={() => go('project')}
+        {step === 'detect' && (
+          <DelayDetector
+            uploadedData={uploadedData}
+            projectData={projectData}
+            onEventsConfirmed={(events) => {
+              setDelayEvents(events)
+              calculateEOT(events)
+            }}
+            onBack={() => go('upload')}
           />
         )}
         {step === 'delays' && mode === 'manual' && (
@@ -189,7 +198,7 @@ export default function App() {
             projectData={projectData}
             isQuick={mode === 'manual'}
             onGenerateReport={generateNarrative}
-            onBack={() => go('delays')}
+            onBack={() => go(mode === 'manual' ? 'delays' : 'detect')}
           />
         )}
         {step === 'report' && narrative && (
@@ -204,11 +213,11 @@ export default function App() {
         )}
       </main>
 
-      {/* Footer */}
       <footer className="text-center py-8 text-xs text-stone-400 border-t border-stone-200 mt-12">
         EOT & Delay Analysis Assistant — Built for FIDIC contract projects in the KSA market
         <br />
-        <a href="https://github.com/suleman-muhammad/eot-delay-assistant" className="text-teal-600 hover:underline mt-1 inline-block" target="_blank" rel="noreferrer">
+        <a href="https://github.com/Kaaramad-Services/EOT-Delay-Assistant"
+          className="text-teal-600 hover:underline mt-1 inline-block" target="_blank" rel="noreferrer">
           View on GitHub
         </a>
       </footer>
