@@ -1,0 +1,13 @@
+{
+  "activityId": ["id", "act id", "activity id", "task id", "wbs", "code", "ref", "reference", "activity code", "task code", "item no", "item number", "seq", "sequence"],
+  "activityName": ["activity", "activity name", "task", "task name", "description", "desc", "work item", "activity description", "name", "item", "scope", "work description", "subject"],
+  "plannedStart": ["planned start", "baseline start", "bl start", "plan start", "p-start", "scheduled start", "target start", "early start", "es", "orig start", "original start", "contract start"],
+  "plannedFinish": ["planned finish", "baseline finish", "bl finish", "plan finish", "p-finish", "scheduled finish", "target finish", "target completion", "planned completion", "planned end", "bl end", "baseline end", "bl end date", "planned end date", "contract finish", "early finish", "ef"],
+  "actualStart": ["actual start", "act start", "a-start", "real start", "commenced", "start date"],
+  "actualFinish": ["actual finish", "forecast finish", "act finish", "a-finish", "forecast completion", "revised finish", "revised completion", "current finish", "expected finish", "projected finish", "anticipated finish", "eac finish", "revised end", "current completion"],
+  "percentComplete": ["% complete", "percent complete", "progress", "completion", "done", "% done", "pct complete", "pct", "physical progress", "progress %", "% progress", "complete %"],
+  "delayCause": ["delay cause", "cause", "reason", "delay reason", "remarks", "comment", "notes", "description of delay", "delay description", "reason for delay", "delay"],
+  "responsibility": ["responsibility", "responsible party", "fault", "blame", "caused by", "delay by", "accountable", "liable", "party"],
+  "totalFloat": ["total float", "float", "tf", "slack", "total slack", "schedule float"],
+  "criticalPath": ["critical", "critical path", "cp", "is critical", "critical flag", "on cp"]
+}

@@ -1,0 +1,117 @@
+{
+  "yellowbook1999": {
+    "name": "FIDIC Yellow Book 1999 (Design-Build)",
+    "eotClause": "8.4",
+    "noticeClause": "20.1",
+    "variationClause": "13.3",
+    "forceMajeureClause": "19.1",
+    "clauses": {
+      "8.4": {
+        "title": "Extension of Time for Completion",
+        "grounds": [
+          { "id": "8.4a", "label": "Variation or change in scope", "ref": "Sub-Clause 8.4(a)" },
+          { "id": "8.4b", "label": "Cause of delay giving entitlement under contract", "ref": "Sub-Clause 8.4(b)" },
+          { "id": "8.4c", "label": "Exceptionally adverse climatic conditions", "ref": "Sub-Clause 8.4(c)" },
+          { "id": "8.4d", "label": "Unforeseeable shortage of personnel or goods", "ref": "Sub-Clause 8.4(d)" },
+          { "id": "8.4e", "label": "Delay caused by authorities", "ref": "Sub-Clause 8.4(e)" }
+        ]
+      },
+      "20.1": { "title": "Contractor's Claims", "noticeDays": 28 },
+      "13.3": { "title": "Variation Procedure" },
+      "19.1": { "title": "Definition of Force Majeure" },
+      "1.9":  { "title": "Delayed Drawings or Instructions" },
+      "2.1":  { "title": "Right of Access to the Site" },
+      "4.7":  { "title": "Setting Out" },
+      "8.3":  { "title": "Programme" },
+      "8.5":  { "title": "Delays Caused by Authorities" },
+      "8.6":  { "title": "Rate of Progress" },
+      "8.7":  { "title": "Delay Damages" },
+      "10.2": { "title": "Taking Over of Parts of the Works" }
+    }
+  },
+  "redbook1999": {
+    "name": "FIDIC Red Book 1999 (Construction)",
+    "eotClause": "8.4",
+    "noticeClause": "20.1",
+    "variationClause": "13.3",
+    "forceMajeureClause": "19.1",
+    "clauses": {
+      "8.4": {
+        "title": "Extension of Time for Completion",
+        "grounds": [
+          { "id": "8.4a", "label": "Variation or employer instruction", "ref": "Sub-Clause 8.4(a)" },
+          { "id": "8.4b", "label": "Cause of delay giving entitlement", "ref": "Sub-Clause 8.4(b)" },
+          { "id": "8.4c", "label": "Exceptionally adverse climatic conditions", "ref": "Sub-Clause 8.4(c)" },
+          { "id": "8.4d", "label": "Unforeseeable shortage of personnel or goods", "ref": "Sub-Clause 8.4(d)" },
+          { "id": "8.4e", "label": "Delay by authorities", "ref": "Sub-Clause 8.4(e)" }
+        ]
+      },
+      "20.1": { "title": "Contractor's Claims", "noticeDays": 28 },
+      "13.3": { "title": "Variation Procedure" },
+      "19.1": { "title": "Definition of Force Majeure" },
+      "1.9":  { "title": "Delayed Drawings or Instructions" },
+      "2.1":  { "title": "Right of Access to the Site" },
+      "4.12": { "title": "Unforeseeable Physical Conditions" },
+      "7.4":  { "title": "Testing" },
+      "8.3":  { "title": "Programme" },
+      "8.5":  { "title": "Delays Caused by Authorities" },
+      "8.7":  { "title": "Delay Damages" }
+    }
+  },
+  "yellowbook2017": {
+    "name": "FIDIC Yellow Book 2017 (Design-Build)",
+    "eotClause": "8.5",
+    "noticeClause": "20.2",
+    "variationClause": "13.3",
+    "forceMajeureClause": "18.1",
+    "clauses": {
+      "8.5": {
+        "title": "Extension of Time for Completion",
+        "grounds": [
+          { "id": "8.5a", "label": "Variation or employer instruction", "ref": "Sub-Clause 8.5(a)" },
+          { "id": "8.5b", "label": "Cause of delay giving entitlement", "ref": "Sub-Clause 8.5(b)" },
+          { "id": "8.5c", "label": "Exceptionally adverse climatic conditions", "ref": "Sub-Clause 8.5(c)" },
+          { "id": "8.5d", "label": "Unforeseeable shortage of personnel or goods", "ref": "Sub-Clause 8.5(d)" },
+          { "id": "8.5e", "label": "Delay by public authorities", "ref": "Sub-Clause 8.5(e)" }
+        ]
+      },
+      "20.2": { "title": "Claims For Payment or EOT", "noticeDays": 28 },
+      "13.3": { "title": "Variation Procedure" },
+      "18.1": { "title": "Exceptional Events" },
+      "1.9":  { "title": "Errors in the Employer's Requirements" },
+      "2.1":  { "title": "Right of Access to the Site" },
+      "8.3":  { "title": "Programme" },
+      "8.6":  { "title": "Delays Caused by Authorities" },
+      "8.8":  { "title": "Delay Damages" },
+      "21.4": { "title": "Obtaining Dispute Avoidance/Adjudication Board's Decision" }
+    }
+  },
+  "redbook2017": {
+    "name": "FIDIC Red Book 2017 (Construction)",
+    "eotClause": "8.5",
+    "noticeClause": "20.2",
+    "variationClause": "13.3",
+    "forceMajeureClause": "18.1",
+    "clauses": {
+      "8.5": {
+        "title": "Extension of Time for Completion",
+        "grounds": [
+          { "id": "8.5a", "label": "Variation or employer instruction", "ref": "Sub-Clause 8.5(a)" },
+          { "id": "8.5b", "label": "Cause of delay giving entitlement", "ref": "Sub-Clause 8.5(b)" },
+          { "id": "8.5c", "label": "Exceptionally adverse climatic conditions", "ref": "Sub-Clause 8.5(c)" },
+          { "id": "8.5d", "label": "Unforeseeable shortage", "ref": "Sub-Clause 8.5(d)" },
+          { "id": "8.5e", "label": "Delay by public authorities", "ref": "Sub-Clause 8.5(e)" }
+        ]
+      },
+      "20.2": { "title": "Claims For Payment or EOT", "noticeDays": 28 },
+      "13.3": { "title": "Variation Procedure" },
+      "18.1": { "title": "Exceptional Events" },
+      "1.9":  { "title": "Delayed Drawings or Instructions" },
+      "2.1":  { "title": "Right of Access to the Site" },
+      "4.12": { "title": "Unforeseeable Physical Conditions" },
+      "8.3":  { "title": "Programme" },
+      "8.6":  { "title": "Delays Caused by Authorities" },
+      "8.8":  { "title": "Delay Damages" }
+    }
+  }
+}
