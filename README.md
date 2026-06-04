@@ -136,9 +136,6 @@ The tool follows the Time Impact Analysis (TIA) approach accepted by Engineers o
 
 Built this tool to demonstrate practical application of Primavera P6 scheduling, FIDIC contract knowledge, and modern web development skills.
 
-- LinkedIn: [linkedin.com/in/suleman-muhammad](https://linkedin.com/in/suleman-muhammad)
-- Credly: [credly.com/users/suleman.muhammad](https://credly.com/users/suleman.muhammad)
-
 ---
 
 ## Certifications applied in this project
